@@ -5,8 +5,8 @@
 //    'httpGetSerial' with some test URLs.  The expected output
 //    is shown at the very bottom of this file.
 //
-// You can run this on your computer with Node.js or use an online Node.js
-// environment, e.g. https://www.anyfiddle.com/templates/nodejs/
+// You can run this on your computer with Node.js or use an online JavaScript
+// environment that allows HTTP requests, e.g. https://runjs.co/
 
 // A callback-style function to make an HTTP GET request.
 // When the request is complete, 'callback' will be called with
