@@ -25,19 +25,12 @@
 //     });
 function httpGet(url, callback) {
     log(`GET ${JSON.stringify(url)}...`);
-    const https = require('https');
-    https.get(url, res => {
-        const responseChunks = [];
-        res.on('data', chunk => {
-            responseChunks.push(chunk);
-        });
-        res.on('end', () => {
-            const responseText = Buffer.concat(responseChunks).toString('utf8');
-            callback(responseText);
-        });
-    }).on('error', err => {
-        throw err;
-    });
+    // The 'fetch' API uses promises, but that's just an internal implementation detail of
+    // 'httpGet'. In this exercise, you should do everything with callbacks, not promises.
+    // of the exercise is to use callbacks everywhere else.
+    fetch(url)
+        .then(res => { res.text().then(callback); })
+        .catch(err => { throw err; });
 }
 
 // This function should initiate parallel HTTP GET requests for all URLs in
